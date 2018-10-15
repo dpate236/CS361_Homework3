@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#include <unistd.h>
 int main(){
  while(1){
   //create some space for our strings
@@ -18,7 +18,9 @@ int main(){
 
   
   while (word) {
-    printf("word: %s\n", word);
+    int status;
+    wait(&status);
+    printf("word: %s\n",word);
     //copy a word to the arg array
     strcpy(argsarray[i], word);
     //get next word
