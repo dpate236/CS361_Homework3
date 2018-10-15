@@ -10,16 +10,13 @@ int main(){
   //print prompt
   //read line from terminal
    printf("CS361 >:");
-  fgets(line, 500, stdin);
-
+  fgets(line, 500, stdin);  
   //break the string up into words
   char *word = strtok(line, " ");
   int i = 0;
 
   
   while (word) {
-    int status;
-    wait(&status);
     printf("word: %s\n",word);
     //copy a word to the arg array
     strcpy(argsarray[i], word);
